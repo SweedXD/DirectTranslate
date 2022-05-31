@@ -22,7 +22,7 @@ LOCAL = os.getenv("local", "en")
 
 # the information of package
 __package_name__ = "Flow.Launcher.Plugin.DirectTranslate"
-__version__ = "2.0.1"
+__version__ = "2.1.0"
 __short_description__ = "Translate between any languages supported by Googletrans"
 GITHUB_USERNAME = "Drimix20"
 
