@@ -49,6 +49,10 @@ Alternatively:
 - if you do no supply any language code, your input language will be auto-detected as 'from language' and your 'to language' will be your computer system default language, e.g. `tr mattina`.
 - if you just supply one language code, this will be used as the 'to language' and your input will be auto-detected as the 'from language', e.g. `tr it morning`
 
+**Full list of supported language codes:**
+
+https://developers.google.com/admin-sdk/directory/v1/languages
+
 ### Problems, errors and feature requests
 
 Open an issue in this repo.
