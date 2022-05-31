@@ -46,8 +46,8 @@ Remember you need to be in the local directory containing the requirements text 
 | `tr {from language} {to language} {words to be translated}` | Translate `words to be translated` from `from language` to `to language` language. Example of usage is `tr en cs hello world` |
 
 Alternatively:
-- if you do no supply any language code, your input lang will be auto-detected as 'from language' and your 'to language' will be your computer system default language, e.g. `tr ciao`.
-- if you just supply one language code, this will be used as the 'to language' and your input will be auto-detected as the 'from language', e.g. `tr en ciao`.
+- if you do no supply any language code, your input language will be auto-detected as 'from language' and your 'to language' will be your computer system default language, e.g. `tr mattina`.
+- if you just supply one language code, this will be used as the 'to language' and your input will be auto-detected as the 'from language', e.g. `tr it morning`
 
 ### Problems, errors and feature requests
 
