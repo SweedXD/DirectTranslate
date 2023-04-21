@@ -44,6 +44,7 @@ Remember you need to be in the local directory containing the requirements text 
 | Keyword                                                          | Description                                 |
 | ---------------------------------------------------------------- | ------------------------------------------- |
 | `tr {from language} {to language} {words to be translated}` | Translate `words to be translated` from `from language` to `to language` language. Example of usage is `tr en cs hello world` |
+| tr :set-proxy {proxy url}                                        | Set up a proxy url for connecting to Google Translate server. Example of usage is `tr :set-proxy http://localhost:1080` . |
 
 Alternatively:
 - if you do no supply any language code, your input language will be auto-detected as 'from language' and your 'to language' will be your computer system default language, e.g. `tr mattina`.
