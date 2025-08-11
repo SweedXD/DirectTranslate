@@ -1,59 +1,65 @@
-# Direct Translate (Flow.Launcher.Plugin.DirectTranslate)
+# Direct Translate (Enhanced) for Flow Launcher
+- Translate plugin that translates between any languages supported by python [googletrans](https://github.com/ssut/py-googletrans) library for [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher).
+- A completely overhauled version of the Direct Translate plugin, now with a powerful command interface and support for 100+ languages.
 
-Translate plugin that translates between any languages supported by python googletrans library for [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher).
-
-![Translate](https://i.imgur.com/mVxnBk1.gif)
-
-#### About
+    ![Direct Translate Plugin Demo](https://github.com/user-attachments/assets/9116c13f-bb92-4987-b87d-ce471275688a)
 
 
-Plugin uses [googletrans](https://github.com/ssut/py-googletrans) to translate between any supported languages.
+## 🌟 Key Features
+*   **Configurable Default Language:** Set your favorite language as the default.
+*   **100+ Language Support:** Access the full Google Translate library.
+*   **Command-Driven Interface:** Use `tr list` and `tr set <code>` to manage settings.
+*   **Smarter Translation Logic:** The plugin is better at understanding your queries.
+
+## 🚀 Installation
+
+### ✅ Prerequisites
+
+- **Python 3.6 or higher**, available in your system’s `PATH` (i.e., `python.exe` can be run from the terminal).
+- **Flow Launcher v1.8+** can automatically install Python if it's missing.
+
+> ℹ️ *Flow Launcher locates Python via your system `PATH`. If needed, manually set it under:*  
+> `Settings → Plugin Settings → Python`
+
+---
+
+### 📦 Install from Flow Launcher Plugin Store
+
+1. Launch Flow Launcher (`Alt + Space`)
+2. Type `pm install` and search for Direct Translate (Enhanced) and hit **Enter**
+
+That’s it — the plugin will be installed and ready to use instantly 🎉
+
+---
+
+### 🛠 Manual Installation
+
+1. Download or clone the `DirectTranslate` folder.
+2. Copy the folder into: `%APPDATA%\Roaming\FlowLauncher\Plugins\`
+3. Restart Flow Launcher.
+
+The plugin should now appear and be ready to use.
 
 
-### Requirements
 
-Python 3.6 or later installed on your system, with python.exe in your PATH variable and this path updated in the Flow Launcher settings (this is a general requirement to use Python plugins with Flow). As of v1.8, Flow Launcher should take care of the installation of Python for you if it is not on your system.
+## 📋 Full Command Reference
 
+| Command | Description |
+| :--- | :--- |
+| `tr` | Shows the main menu with current settings and usage info. |
+| `tr list` | Displays the full list of 100+ supported languages. |
+| `tr set <code>` | Begins the process of setting a new default language. |
+| `tr <text>` | Translates text to your default language. |
+| `tr <to> <text>` | Translates text TO the specified language. |
+| `tr <from> <to> <text>` | Translates between a specific source and target language. |
 
-### Installing
+**Examples:**
+*   `tr hello world` -> Translates to your default language.
+*   `tr es hello world` -> Translates "hello world" to Spanish.
+*   `tr fr en maison` -> Translates "bonjour" from French to English.
+*   `tr set fr` -> This will bring up a confirmation to set French as the default.
 
-#### Package Manager
+## 👨‍💼 Credits
 
-Use the `pm install` command from within Flow itself.
-
-#### Manual
-
-Add the Flow.Launcher.Plugin.DirectTranslate directory to %APPDATA%\Roaming\FlowLauncher\Plugins\ and restart Flow.
-
-#### Python Package Requirements
-
-There is no requirement to install the packages as they will be packed with the release. 
-
-If you still want to manually pip install them:
-
-The `requirements.txt` file in this repo outlines which packages are needed. This can be found online here on Github, as well as in the local plugin directory once installed (%APPDATA%\Roaming\FlowLauncher\Plugins\Direct Translate-X.X.X\ where X.X.X is the currently installed version)
-
-The easiest way to manually install these packages is to use the following command in a Windows Command Prompt or Powershell Prompt
-
-`pip install -r requirements.txt -t ./lib`
-
-Remember you need to be in the local directory containing the requirements text file.
-
-### Usage
-
-| Keyword                                                          | Description                                 |
-| ---------------------------------------------------------------- | ------------------------------------------- |
-| `tr {from language} {to language} {words to be translated}` | Translate `words to be translated` from `from language` to `to language` language. Example of usage is `tr en cs hello world` |
-| tr :set-proxy {proxy url}                                        | Set up a proxy url for connecting to Google Translate server. Example of usage is `tr :set-proxy http://localhost:1080` . |
-
-Alternatively:
-- if you do no supply any language code, your input language will be auto-detected as 'from language' and your 'to language' will be your computer system default language, e.g. `tr mattina`.
-- if you just supply one language code, this will be used as the 'to language' and your input will be auto-detected as the 'from language', e.g. `tr it morning`
-
-**Full list of supported language codes:**
-
-https://developers.google.com/admin-sdk/directory/v1/languages
-
-### Problems, errors and feature requests
-
-Open an issue in this repo.
+*   Original updated plugin created by **@Drimix20**.
+*   This enhanced version was updated by **@SweedXD**.

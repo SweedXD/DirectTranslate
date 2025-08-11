@@ -1,14 +1,14 @@
 {
-    "ID": "1b7c732781f94b748ed08351f8200894",
+    "ID": "a74621e00ca34dfea26b4aa7a612834e",
     "ActionKeyword": "tr",
-    "Name": "Flow.Launcher.Plugin.DirectTranslate",
-    "Description": "Translate between any languages supported by Google Translate",
-    "Author": "Drimix20",
-    "Version": "2.1.0",
+    "Name": "Direct Translate (Enhanced)",
+    "Description": "Translate between any languages supported by googletrans",
+    "Author": "SweedXD",
+    "Version": "3.0.0",
     "Language": "python",
-    "Website": "https://github.com/deefrawley/Flow.Launcher.Plugin.DirectTranslate",
+    "Website": "https://github.com/SweedXD/Direct-Translate",
     "IcoPath": "assets/favicon.ico",
     "ExecuteFileName": "main.py",
-    "UrlDownload": "https://github.com/deefrawley/Flow.Launcher.Plugin.DirectTranslate/releases/download/2.0.1/Flow.Launcher.Plugin.DirectTranslate-2.0.1.zip",
-    "UrlSourceCode": "https://github.com/deefrawley/Flow.Launcher.Plugin.DirectTranslate"
+    "UrlDownload": "https://github.com/SweedXD/Direct-Translate/releases/download/v3.0.0/Direct-Translate-3.0.0.zip",
+    "UrlSourceCode": "https://github.com/SweedXD/Direct-Translate"
 }

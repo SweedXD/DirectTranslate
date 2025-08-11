@@ -1,3 +1,8 @@
+import os
+import sys
+
+basedir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(basedir, "lib"))
 import sys, os
 
 parent_folder_path = os.path.abspath(os.path.dirname(__file__))

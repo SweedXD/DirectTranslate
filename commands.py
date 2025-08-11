@@ -93,9 +93,21 @@ def hook_env_snippet(exec_file: str = PLUGIN_EXECUTE_FILENAME) -> str:
 
 
 @click.group()
-def translate():
+def translate(self, src: str, dest: str, query: str):
     """Translation and localization commands."""
-    ...
+    try:
+        translator = Translator()
+        if src == "auto":
+            src = translator.detect(query).lang
+            sources = src if isinstance(src, list) else [src]
+        else: sources = [src]
+
+        for src in sources:
+            translation = translator.translate(query, src=src, dest=dest)
+            self.add_item(_(str(translation.text)), f"{src} → {dest}   {query}")
+    except Exception as error:
+        self.add_item(_(str(error)), f"{src} → {dest}   {query}")
+    return self.items
 
 
 @translate.command()
