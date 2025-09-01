@@ -18,7 +18,7 @@ jobs:
 
       - name: Set up Environment
         run: |
-          sudo apt-get install -y gettext
+          sudo apt-get install -y gettext jq
           python -m pip install --upgrade pip
           pip install click babel
           pip install -r ./requirements.txt
@@ -38,13 +38,8 @@ jobs:
       - name: Pack plugin to a zip file
         run: python commands.py build
 
-      - name: get version
-        id: version
-        uses: notiz-dev/github-action-json-property@release
-        with: 
-          path: 'plugin.json'
-          prop_path: 'Version'
-      - run: echo ${{ steps.version.outputs.prop }} 
+      - name: Read version from plugin.json
+        run: echo "VERSION=$(jq -r .Version plugin.json)" >> $GITHUB_ENV
 
       - name: Create GitHub Release
         id: create_release
@@ -53,9 +48,9 @@ jobs:
           # This token is provided by Actions
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ steps.version.outputs.prop }}
-          release_name: v${{ steps.version.outputs.prop }}
-          draft: true
+          tag_name: v${{ env.VERSION }}
+          release_name: v${{ env.VERSION }}
+          draft: false
           prerelease: false
 
       - name: Get Asset name
