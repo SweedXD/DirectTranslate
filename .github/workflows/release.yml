@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: "3.8"
 
@@ -53,8 +53,8 @@ jobs:
           # This token is provided by Actions
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.version.outputs.prop }}
-          release_name: ${{ steps.version.outputs.prop }}
+          tag_name: v${{ steps.version.outputs.prop }}
+          release_name: v${{ steps.version.outputs.prop }}
           draft: true
           prerelease: false
 

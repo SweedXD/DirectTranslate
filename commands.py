@@ -199,9 +199,47 @@ def setup_env():
 
 @env.command()
 def setup_env_to_lib():
-    """Install dependencies to local."""
+    """
+    Install dependencies to local.
+    """
 
     os.system(f"pip install -r requirements.txt -t {lib_path} --upgrade")
+
+    # Write Python 3.13+ compatibility shim for deprecated stdlib 'cgi'
+    # Old versions of httpx import cgi.parse_header, which was removed in 3.13 (PEP 594).
+    # Ensure lib/cgi.py exists in the packaged artifact.
+    shim_path = lib_path / "cgi.py"
+    try:
+        shim_src = '''# Minimal compatibility shim for Python 3.13+ (PEP 594)
+# Provides cgi.parse_header used by older httpx versions.
+from typing import Dict, Tuple
+
+__all__ = ["parse_header"]
+
+def parse_header(line: str) -> Tuple[str, Dict[str, str]]:
+    if not line:
+        return "", {}
+    parts = [p.strip() for p in line.split(";")]
+    content_type = parts[0].lower() if parts else ""
+    params: Dict[str, str] = {}
+    for item in parts[1:]:
+        if not item:
+            continue
+        if "=" in item:
+            k, v = item.split("=", 1)
+            k = k.strip().lower()
+            v = v.strip()
+            if len(v) >= 2 and v[0] == v[-1] and v[0] in ('"', "'"):
+                v = v[1:-1]
+            params[k] = v
+        else:
+            params[item.lower()] = ""
+    return content_type, params
+'''
+        with open(shim_path, "w", encoding="utf-8") as f:
+            f.write(shim_src)
+    except Exception as e:
+        click.echo(f"Warning: failed to write cgi shim: {e}")
 
     click.echo("Done.")
 

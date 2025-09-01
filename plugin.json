@@ -4,11 +4,9 @@
     "Name": "Direct Translate (Enhanced)",
     "Description": "Translate between any languages supported by googletrans",
     "Author": "SweedXD",
-    "Version": "3.0.0",
+    "Version": "3.0.1",
     "Language": "python",
-    "Website": "https://github.com/SweedXD/Direct-Translate",
+    "Website": "https://github.com/SweedXD/DirectTranslate",
     "IcoPath": "assets/favicon.ico",
-    "ExecuteFileName": "main.py",
-    "UrlDownload": "https://github.com/SweedXD/DirectTranslate/releases/download/v3.0.0/DirectTranslate-3.0.0.zip",
-    "UrlSourceCode": "https://github.com/SweedXD/Direct-Translate"
+    "ExecuteFileName": "main.py"
 }
