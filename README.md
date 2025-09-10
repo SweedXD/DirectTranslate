@@ -15,7 +15,7 @@
 
 ### ✅ Prerequisites
 
-- **Python 3.6 or higher**, available in your system’s `PATH` (i.e., `python.exe` can be run from the terminal).
+- **Python 3.6 or higher**, available in your system.
 - **Flow Launcher v1.8+** can automatically install Python if it's missing.
 
 > ℹ️ *Flow Launcher locates Python via your system `PATH`. If needed, manually set it under:*  
