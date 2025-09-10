@@ -1,4 +1,25 @@
-flowlauncher
-python-dotenv
-typing
+# DirectTranslate Plugin Dependencies
+# These are vendored into the lib/ directory using: pip install -t lib -r requirements.txt
+
+# Google Translate client (alpha version with sync API)
 googletrans==3.1.0a0
+
+# HTTP client libraries (pinned to compatible versions)
+httpx==0.13.3
+httpcore==0.9.1
+
+# Supporting libraries
+certifi==2025.8.3
+chardet==3.0.4
+h11==0.9.0
+h2==3.2.0
+hpack==3.0.0
+hstspreload==2025.1.1
+hyperframe==5.2.0
+idna==2.10
+rfc3986==1.5.0
+sniffio==1.3.1
+python-dotenv==1.0.1
+
+# Flow Launcher integration
+flowlauncher==0.2.0

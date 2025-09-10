@@ -1,10 +1,10 @@
 {
     "ID": "a74621e00ca34dfea26b4aa7a612834e",
     "ActionKeyword": "tr",
-    "Name": "Direct Translate (Enhanced)",
+    "Name": "DirectTranslate",
     "Description": "Translate between any languages supported by googletrans",
     "Author": "SweedXD",
-    "Version": "3.0.1",
+    "Version": "3.0.2",
     "Language": "python",
     "Website": "https://github.com/SweedXD/DirectTranslate",
     "IcoPath": "assets/favicon.ico",
