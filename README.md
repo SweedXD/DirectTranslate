@@ -1,4 +1,4 @@
-# Direct Translate (Enhanced) for Flow Launcher
+# Direct Translate for Flow Launcher
 - Translate plugin that translates between any languages supported by python [googletrans](https://github.com/ssut/py-googletrans) library for [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher).
 - A completely overhauled version of the Direct Translate plugin, now with a powerful command interface and support for 100+ languages.
 
