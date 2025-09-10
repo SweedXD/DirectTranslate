@@ -39,13 +39,10 @@ jobs:
         run: python commands.py build
 
       - name: Read version from plugin.json
-        run: echo "VERSION=$(jq -r .Version plugin.json)" >> $GITHUB_ENV
-
-      - name: Get Asset name
         run: |
-          export PKG=$(ls build/ | grep zip)
-          set -- $PKG
-          echo "name=$1" >> $GITHUB_ENV
+          VERSION=$(jq -r .Version plugin.json)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "ZIP_NAME=DirectTranslate-$VERSION.zip" >> $GITHUB_ENV
 
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
@@ -56,4 +53,4 @@ jobs:
           name: v${{ env.VERSION }}
           draft: false
           prerelease: false
-          files: build/${{ env.name }}
+          files: build/${{ env.ZIP_NAME }}
